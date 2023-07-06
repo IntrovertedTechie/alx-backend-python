@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""  sum of floats """
 
 def add(a: float, b: float) -> float:
     """
