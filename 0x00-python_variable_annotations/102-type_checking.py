@@ -26,6 +26,6 @@ def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
 
 array: Tuple[int, int, int] = (12, 72, 91)
 
-zoom_2x: List[int] = zoom_array(array)
+zoom_2x: List[int] = zoom_array(array)  # Type annotation for zoom_2x
 
-zoom_3x: List[int] = zoom_array(array, 3)
+zoom_3x: List[int] = zoom_array(array, 3)  # Type annotation for zoom_3x
