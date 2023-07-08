@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-This module provides a function for zooming an array.
+This module provides a function for zooming
 """
 
 from typing import Tuple, List
@@ -9,7 +9,7 @@ from typing import Tuple, List
 
 def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
     """
-    Returns a zoomed-in list by repeating e
+    Returns a zoomed-in list by repeating 
     """
     zoomed_in: List[int] = [
         item
