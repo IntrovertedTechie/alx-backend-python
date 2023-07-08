@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-This module provides a function for calculating 
+This module provides a function for cal
 """
 
 from typing import List, Union
