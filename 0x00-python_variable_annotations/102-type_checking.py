@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 """
-This module provides a function for zooming
-"""
+This module provides a function for """
 
 from typing import Tuple, List
 
