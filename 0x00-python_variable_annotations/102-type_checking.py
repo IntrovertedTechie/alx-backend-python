@@ -6,16 +6,10 @@ This module provides a function for zooming an array.
 
 from typing import Tuple, List
 
+
 def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
     """
-    Returns a zoomed-in list by repeating each element by the factor.
-
-    Args:
-        lst (Tuple[int, ...]): The input tuple of integers.
-        factor (int): The zoom factor. Defaults to 2.
-
-    Returns:
-        List[int]: The zoomed-in list.
+    Returns a zoomed-in list by repeating e
     """
     zoomed_in: List[int] = [
         item
