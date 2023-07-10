@@ -2,10 +2,14 @@
 
 """
 <<<<<<< HEAD
+<<<<<<< HEAD
 This module provides a function for converting a given float to its string rep.
 =======
 This module provides a function for converting a given float to its string representation.
 >>>>>>> 4b8dad78beb63b2618a5bd88d87c568cb6bd1d24
+=======
+This module provides a function for converting.
+>>>>>>> a6f71a9fa454aaac21dcfb63b8c32a1f72ce1336
 """
 
 
