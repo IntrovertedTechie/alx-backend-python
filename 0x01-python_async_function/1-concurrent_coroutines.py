@@ -5,7 +5,8 @@ from typing import List
 import random
 
 
-async def wait_random(max_delay: int = 10) -> float:
+async def wait_random(max_delay: 
+ = 10) -> float:
     """
     Asynchronous coroutine .
     """
@@ -14,7 +15,8 @@ async def wait_random(max_delay: int = 10) -> float:
     return delay
 
 
-async def wait_n(n: int, max_delay: int) -> List[float]:
+async def wait_n(n: 
+, max_delay: int) -> List[float]:
     """
     Asynchronous coroutine 
     """
