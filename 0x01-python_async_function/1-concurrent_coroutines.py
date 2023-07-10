@@ -7,7 +7,7 @@ import random
 
 async def wait_random(max_delay: float = 10) -> float:
     """
-    Asynchronous coroutine that returns a random delay.
+    Asynchronous coroutine 
     """
     delay: float = random.uniform(0, max_delay)
     await asyncio.sleep(delay)
@@ -16,7 +16,7 @@ async def wait_random(max_delay: float = 10) -> float:
 
 async def wait_n(n: int, max_delay: float) -> List[float]:
     """
-    Asynchronous coroutine that spawns multiple wait_random tasks and returns a list of delays.
+    Asynchronous coroutine 
     """
     delays: List[float] = []
     tasks: List[asyncio.Task[float]] = []
