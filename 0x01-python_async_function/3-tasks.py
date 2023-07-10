@@ -3,6 +3,7 @@
 import asyncio
 from typing import Callable
 
+
 def task_wait_random(max_delay: int) -> asyncio.Task:
     """
     Takes an integer max_delay 
