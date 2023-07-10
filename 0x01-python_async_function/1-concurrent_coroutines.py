@@ -7,8 +7,7 @@ import random
 
 async def wait_random(max_delay: int = 10) -> float:
     """
-    Asynchronous coroutine that waits for a random delay between 0 and max_delay (inclusive) seconds.
-    Returns the randomly generated delay.
+    Asynchronous coroutine .
     """
     delay: float = random.uniform(0, max_delay)
     await asyncio.sleep(delay)
@@ -17,8 +16,7 @@ async def wait_random(max_delay: int = 10) -> float:
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """
-    Asynchronous coroutine that spawns `wait_random` n times with the specified max_delay.
-    Returns the list of delays in ascending order.
+    Asynchronous coroutine 
     """
     delays: List[float] = []
     tasks: List[asyncio.Task] = []
