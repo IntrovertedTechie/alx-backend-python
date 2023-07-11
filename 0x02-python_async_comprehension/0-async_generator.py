@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+
 """
-Module for an asynchronous generator function that yields.
+Module for an asynchronous generator function that yields random float values.
 """
 
 import asyncio
 import random
-from typing import AsyncGenerator
+from typing import AsyncGenerator, List
 
 
 async def async_generator() -> AsyncGenerator[float, None]:
@@ -20,11 +21,11 @@ async def async_generator() -> AsyncGenerator[float, None]:
         yield random.uniform(0, 10)
 
 
-async def print_yielded_values():
+async def print_yielded_values() -> None:
     """
     Coroutine that prints the values yielded by the async_generator.
     """
-    result = []
+    result: List[float] = []
     async for i in async_generator():
         result.append(i)
     print(result)
