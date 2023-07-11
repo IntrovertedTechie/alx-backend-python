@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 """
-Module for asynchronous generator and coroutine to print yielded vlues.
+Module for asynchronous generator and coroutine to print yielded values.
 """
+
 import asyncio
 import random
 from typing import AsyncGenerator, List
@@ -18,7 +19,10 @@ async def async_generator() -> AsyncGenerator[float, None]:
         yield random.uniform(0, 10)
 
 
-async def print_yielded_values():
+async def print_yielded_values() -> None:
+    """
+    Coroutine that prints the values yielded by the async_generator.
+    """
     result: List[float] = []
     async for i in async_generator():
         result.append(i)
