@@ -1,32 +1,37 @@
 #!/usr/bin/env python3
-
 """
-Module for asynchronous generator and coroutine to print yielded values.
+Module for an asynchronous generator function that yields a
+random float between 0 and 10 after a one-second delay for a total of
+10 iterations.
 """
 
 import asyncio
 import random
-from typing import AsyncGenerator, List
+from typing import AsyncGenerator
 
 
 async def async_generator() -> AsyncGenerator[float, None]:
     """
-    Asynchronous generator that yields a random number between 0 and 10
-    after waiting for 1 second in each iteration, for a total of 10 times.
+    Asynchronous generator function that yields a random float between 0 and 10
+    after a one-second delay for a total of 10 iterations.
+
+    Yields:
+        float: Random float value between 0 and 10.
     """
     for _ in range(10):
         await asyncio.sleep(1)
         yield random.uniform(0, 10)
 
 
-async def print_yielded_values() -> None:
+async def print_yielded_values():
     """
     Coroutine that prints the values yielded by the async_generator.
     """
-    result: List[float] = []
+    result = []
     async for i in async_generator():
         result.append(i)
     print(result)
 
 
-asyncio.run(print_yielded_values())
+if __name__ == "__main__":
+    asyncio.run(print_yielded_values())
