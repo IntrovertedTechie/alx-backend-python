@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Module for asynchronous generator and coroutine to print yielded values.
+Module for asynchronous generator and coroutine to print yielded vlues.
 """
 import asyncio
 import random
