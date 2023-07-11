@@ -6,7 +6,7 @@ Module for an asynchronous generator function that yields random float values.
 
 import asyncio
 import random
-from typing import AsyncGenerator, List
+from typing import AsyncGenerator
 
 
 async def async_generator() -> AsyncGenerator[float, None]:
@@ -25,7 +25,7 @@ async def print_yielded_values() -> None:
     """
     Coroutine that prints the values yielded by the async_generator.
     """
-    result: List[float] = []
+    result = []
     async for i in async_generator():
         result.append(i)
     print(result)
