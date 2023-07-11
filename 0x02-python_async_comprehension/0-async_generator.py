@@ -12,9 +12,6 @@ from typing import AsyncGenerator, List
 async def async_generator() -> AsyncGenerator[float, None]:
     """
     Asynchronous generator function that yields a random float between 0 and 10.
-
-    Yields:
-        float: Random float value between 0 and 10.
     """
     for _ in range(10):
         await asyncio.sleep(1)
