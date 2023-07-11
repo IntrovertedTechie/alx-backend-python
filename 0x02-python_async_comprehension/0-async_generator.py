@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+
+"""
+Module for asynchronous generator and coroutine to print yielded values.
+"""
 import asyncio
 import random
 from typing import AsyncGenerator, List
