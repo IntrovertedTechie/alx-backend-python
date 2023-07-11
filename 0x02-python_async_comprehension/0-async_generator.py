@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
-Module for an asynchronous generator function that yields a
-random float between 0 and 10 after a one-second delay for a total of
-10 iterations.
+Module for an asynchronous generator function that yields.
 """
 
 import asyncio
@@ -12,8 +10,7 @@ from typing import AsyncGenerator
 
 async def async_generator() -> AsyncGenerator[float, None]:
     """
-    Asynchronous generator function that yields a random float between 0 and 10
-    after a one-second delay for a total of 10 iterations.
+    Asynchronous generator function that yields a random float between 0 and 10.
 
     Yields:
         float: Random float value between 0 and 10.
