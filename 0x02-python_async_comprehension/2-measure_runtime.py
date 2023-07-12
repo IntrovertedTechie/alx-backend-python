@@ -1,20 +1,26 @@
 #!/usr/bin/env python3
+
 """
-Module for an asynchronous generator function that yields measure_runtime.
+Module for an asynchronous function that measures the total runtime.
 """
 
 import asyncio
-from time import time
+import time
 
-async_comprehension = __import__('1-async_comprehension').async_comprehension
+
+async def async_comprehension() -> float:
+    """
+    Coroutine that performs some asynchronous computation.
+    """
+    await asyncio.sleep(1)
+    return 1
 
 
 async def measure_runtime() -> float:
     """
-    Coroutine that executes async_comprehension four times in parallel
-    
+    Coroutine that executes async_comprehension four times in parallel and measures the total runtime.
     """
-    start = time()
+    start_time = time.time()
 
     await asyncio.gather(
         async_comprehension(),
@@ -23,15 +29,17 @@ async def measure_runtime() -> float:
         async_comprehension()
     )
 
-    end = time() - start
-    return end
+    end_time = time.time() - start_time
+    return end_time
 
 
-async def main():
+async def main() -> None:
     """
-    Coroutine that calls measure_runtime and awaits its result.
+    Coroutine that calls measure_runtime and prints the result.
     """
-    return await measure_runtime()
+    runtime = await measure_runtime()
+    print(f"Total runtime: {runtime} seconds")
 
 
-print(asyncio.run(main()))
+if __name__ == "__main__":
+    asyncio.run(main())
