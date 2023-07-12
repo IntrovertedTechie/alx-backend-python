@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
+"""
+Module for an asynchronous function that measures the total runtime.
+"""
+
 import asyncio
-from time import time
+import time
 
 
 async def async_comprehension() -> float:
@@ -12,11 +16,11 @@ async def async_comprehension() -> float:
     return 1
 
 
-async def measure_runtime() -> bool:
+async def measure_runtime() -> float:
     """
-    Coroutine that executes async_comprehension four times in parallel and checks if the runtime falls within the desired range.
+    Coroutine that executes async_comprehension four times in parallel and measures the total runtime.
     """
-    start_time = time()
+    start_time = time.time()
 
     await asyncio.gather(
         async_comprehension(),
@@ -25,19 +29,16 @@ async def measure_runtime() -> bool:
         async_comprehension()
     )
 
-    end_time = time() - start_time
-
-    threshold = 10.0 + (10.0 * 0.1)  # Calculate the threshold (10 seconds + 10% overhead)
-
-    return end_time <= threshold
+    end_time = time.time() - start_time
+    return end_time
 
 
 async def main() -> None:
     """
     Coroutine that calls measure_runtime and prints the result.
     """
-    runtime_within_range = await measure_runtime()
-    print(f"Runtime within range: {runtime_within_range}")
+    runtime = await measure_runtime()
+    print(f"Total runtime: {runtime} seconds")
 
 
 if __name__ == "__main__":
