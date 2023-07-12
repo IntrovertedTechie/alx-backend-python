@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Module for 2-measurement
+Module for an asynchronous generator function that yields  2-measurement
 """
 
 import asyncio
