@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Module for an asynchronous generator function that yields  2-measure_runtime.
+Module for an asynchronous generator function that yields measure_runtime.
 """
 
 import asyncio
