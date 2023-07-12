@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-2-meaaurement
+Module for 2-measurement
 """
 
 import asyncio
