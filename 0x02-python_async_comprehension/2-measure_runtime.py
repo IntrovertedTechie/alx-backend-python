@@ -12,9 +12,9 @@ async def async_comprehension() -> float:
     return 1
 
 
-async def measure_runtime() -> float:
+async def measure_runtime() -> bool:
     """
-    Coroutine that executes async_comprehension four times in parallel and measures the total runtime.
+    Coroutine that executes async_comprehension four times in parallel and checks if the runtime falls within the desired range.
     """
     start_time = time()
 
@@ -28,21 +28,16 @@ async def measure_runtime() -> float:
     end_time = time() - start_time
 
     threshold = 10.0 + (10.0 * 0.1)  # Calculate the threshold (10 seconds + 10% overhead)
-    if end_time > threshold:
-        raise ValueError("Runtime exceeds the threshold")
 
-    return end_time
+    return end_time <= threshold
 
 
 async def main() -> None:
     """
     Coroutine that calls measure_runtime and prints the result.
     """
-    try:
-        runtime = await measure_runtime()
-        print(f"Total runtime: {runtime} seconds")
-    except ValueError as e:
-        print(f"Error: {str(e)}")
+    runtime_within_range = await measure_runtime()
+    print(f"Runtime within range: {runtime_within_range}")
 
 
 if __name__ == "__main__":
