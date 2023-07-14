@@ -6,40 +6,13 @@ Module for an asynchronous function that measures the total runtime.
 
 import asyncio
 import time
-
-
-async def async_comprehension() -> float:
-    """
-    Coroutine that performs some asynchronous computation.
-    """
-    await asyncio.sleep(1)
-    return 1
+async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
 async def measure_runtime() -> float:
-    """
-    Coroutine that executes async_comprehension four times in parallel and measures the total runtime.
-    """
-    start_time = time.time()
-
-    await asyncio.gather(
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension()
-    )
-
-    end_time = time.time() - start_time
-    return end_time
-
-
-async def main() -> None:
-    """
-    Coroutine that calls measure_runtime and prints the result.
-    """
-    runtime = await measure_runtime()
-    print(f"Total runtime: {runtime} seconds")
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
+    """Executes async_comprehension four times in parallel
+        and measure_runtime should measure the total runtime and return it"""
+    start_time = time.perf_counter()
+    await asyncio.gather(async_comprehension(), async_comprehension(),
+                         async_comprehension(), async_comprehension())
+    return time.perf_counter() - start_time
