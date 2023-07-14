@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-
 """
 Module for an asynchronous generator function that yields random float values.
 """
-
 import asyncio
 import random
 from typing import AsyncGenerator, List
