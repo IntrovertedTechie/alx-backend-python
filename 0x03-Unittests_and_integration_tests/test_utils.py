@@ -8,6 +8,8 @@ from parameterized import parameterized
 
 from utils import access_nested_map, get_json, memoize
 
+
+
 class TestAccessNestedMap(TestCase):
     """Test class for the access_nested_map function
 
@@ -75,4 +77,3 @@ class TestMemoize(TestCase):
             test_class.a_property()
             test_class.a_property()
             mock.assert_called_once()
-
